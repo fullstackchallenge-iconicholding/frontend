@@ -1,6 +1,7 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 import Navigation from './components/Navingations';
+import Signin from './components/Signin/Signin';
 import Logo from './components/Logo/Logo';
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
       <Particles className='particles' params={particlesOptions} />
       <Navigation />
       <Logo />
+      <Signin />
     </div>
   );
 }
