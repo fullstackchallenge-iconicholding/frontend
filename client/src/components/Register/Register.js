@@ -20,7 +20,7 @@ class Register extends React.Component {
         this.setState({ password: event.target.value })
     }
 
-    onSubmitSignIn = (user) => {
+    onSubmitSignIn = () => {
         axios
             .post('https://iconicholding-backend.herokuapp.com/api/auth/register', {
                 username: this.state.username,
@@ -29,6 +29,13 @@ class Register extends React.Component {
             })
             .then((res) => {
                 console.log(res);
+                this.props.onRouteChange('signin');
+            })
+            .then(user => {
+                if (user) {
+                  this.props.loadUser(user)
+                  this.props.onRouteChange('home');
+                }
             })
             .catch((err) => {
                 console.log(err);

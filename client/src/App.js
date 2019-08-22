@@ -4,6 +4,7 @@ import Navigation from './components/Navingations';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Logo from './components/Logo/Logo';
+import WelcomeMsg from './components/WelcomeMsg/WelcomeMsg';
 import './App.css';
 
 // react particles configuration
@@ -24,8 +25,21 @@ class App extends Component {
     super();
     this.state = {
       route: 'signin',
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: '',
+        username: '',
+        email: ''
+      }
     };
+  }
+
+  loadUser = (data) => {
+    this.setState({user: {
+      id: data.id,
+      username: data.username,
+      email: data.email
+    }})
   }
 
   onRouteChange = route => {
@@ -49,6 +63,7 @@ class App extends Component {
         {route === 'home' ? (
           <div>
             <Logo />
+            <WelcomeMsg />
           </div>
         ) : route === 'signin' ? (
           <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
