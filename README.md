@@ -31,12 +31,12 @@ When you install Node.js, npm will install automaically. Here's a great source o
   - CD into the folder where you cloned your fork
   - enter the command below download dependencies:
 ```sh
-$ npm install
+$ `yarn install` or `npm install` 
 ```
 * Run app
 
 ```sh
-$ npm start
+$ `yarn start` or `npm start` 
 ```
 * You will see the below message in terminal if everything was successfully installed:
 You can now view the app in the browser.
