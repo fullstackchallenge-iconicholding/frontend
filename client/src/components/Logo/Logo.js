@@ -1,6 +1,7 @@
 import React from 'react';
 import Tilt from 'react-tilt';
 import iconicholding from './iconicholding.png';
+import './Logo.css';
 
 const Logo = () => {
     return (
